@@ -1,0 +1,21 @@
+{
+    "name": "map-reduce.ts",
+    "description": "count words in list of files with multi-core map reduce",
+    "version": "0.0.1",
+    "author": "michael neely",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://www.github.com/michaeljneelysd/Map-Reduce"
+    },
+    "main": "src/map-reduce.ts",
+    "dependencies": {
+        "fs-extra": "^5.0.0",
+        "path-exists": "^3.0.0"
+    },
+    "devDependencies": {
+        "@types/fs-extra": "^5.0.2",
+        "@types/node": "^9.6.5",
+        "@types/path-exists": "^3.0.0"
+    }
+}
