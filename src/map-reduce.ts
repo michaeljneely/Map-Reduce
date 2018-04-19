@@ -34,7 +34,7 @@ const reduce = function(word: string, counts: Array<number>): number {
  * @param {Function} callback Callback function to be invoked on completion
  * @returns {Map<string, number>} Map of (word, total count) pairs
  */
-export function mapReduceParent(numCores: number, filenames: Array<string>, callback: Function) {
+export function multiCoreMapReduce(numCores: number, filenames: Array<string>, callback: Function) {
     const tick = Date.now();
     let childrenDone = 0;
     let all = new Array<MapReduceTuple>();
