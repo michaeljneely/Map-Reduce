@@ -17,7 +17,7 @@ function main() {
         if (numCores < 0 || numCores > maxCores) {
             throw new RangeError(`Number of Cores must be greater than 0 and less than or equal to ${numCores}.`);
         }
-        multiCoreMapReduce(numCores, process.argv.slice(3), print);
+        multiCoreMapReduce(numCores, process.argv[3] === "true", process.argv.slice(4), print);
     }
     catch (error) {
         console.log(error);
@@ -26,7 +26,3 @@ function main() {
 }
 
 main();
-
-    // [...finalCounts.keys()].forEach((word) => {
-    //     console.log(`${word} - ${finalCounts.get(word)}`);
-    // });

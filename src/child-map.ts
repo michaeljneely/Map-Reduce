@@ -3,7 +3,7 @@ import * as path from "path";
 import { MapReduceFile, MapReduceTuple } from "./map-reduce";
 
 process.on("message", async (filenames: Array<string>) => {
-    console.log(`Child process called with ${filenames.length} files.`);
+    console.log(`Map child process called with ${filenames.length} files.`);
     let tuples = new Array<MapReduceTuple>();
     if (filenames) {
         for (const filename of filenames) {
@@ -12,6 +12,10 @@ process.on("message", async (filenames: Array<string>) => {
         }
         process.send(tuples);
     }
+});
+
+process.on("SIGINT", () => {
+    console.log(`Map child process killed`);
 });
 
 
